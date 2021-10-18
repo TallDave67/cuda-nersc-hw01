@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\readme.md">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="..\.gitignore">
+      <Filter>github</Filter>
+    </None>
+    <None Include="..\nvidia-profiling\profile.hello.ncu-rep">
+      <Filter>Profiling</Filter>
+    </None>
+    <None Include="..\nvidia-profiling\profile.matrix_mul_double.ncu-rep">
+      <Filter>Profiling</Filter>
+    </None>
+    <None Include="..\nvidia-profiling\profile.matrix_mul_float.ncu-rep">
+      <Filter>Profiling</Filter>
+    </None>
+    <None Include="..\nvidia-profiling\profile.vector_add.ncu-rep">
+      <Filter>Profiling</Filter>
+    </None>
+    <None Include="..\external-validation\validate-sum-real-numbers.ods">
+      <Filter>Validation</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{dfad069f-b406-4d4a-926f-cb751ada0448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="github">
+      <UniqueIdentifier>{477b8b80-8947-413d-8cde-4a24b4849894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{3c763b1e-451a-4c06-8f8b-ac26c6080132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Output">
+      <UniqueIdentifier>{0d0163da-84d2-4667-a726-5d3a43eb1ca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profiling">
+      <UniqueIdentifier>{da1575a8-40b4-47c9-b931-af8b85dbbf1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Validation">
+      <UniqueIdentifier>{2db3862e-5d60-4d5d-b324-adfffe667fe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{c52efc66-ba51-41f4-ba83-924701494646}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\input\ph.txt">
+      <Filter>Input</Filter>
+    </Text>
+    <Text Include="..\output\hello.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="..\output\matrix_mul_double.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="..\output\matrix_mul_float.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="..\output\vector_add.txt">
+      <Filter>Output</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="hello.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernel.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="matrix_mul_double.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="matrix_mul_float.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="vector_add.cu">
+      <Filter>Source</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>
