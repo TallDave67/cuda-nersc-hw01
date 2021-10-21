@@ -42,8 +42,7 @@ int main_matrix_mul_float() {
     // *************** HOST MEMORY ***************
     // *******************************************
 
-    float* h_A, * h_B, * h_C, * d_A, * d_B, * d_C;
-
+    float * h_A, * h_B, * h_C;
     h_A = new float[DSIZE * DSIZE];
     h_B = new float[DSIZE * DSIZE];
     h_C = new float[DSIZE * DSIZE];
@@ -72,6 +71,7 @@ int main_matrix_mul_float() {
     printf("Init took %f seconds.  Begin compute\n", t1sum);
 
     // Allocate device memory
+    float * d_A, * d_B, * d_C;
     cudaMalloc(&d_A, DSIZE * DSIZE * sizeof(float));
     cudaMalloc(&d_B, DSIZE * DSIZE * sizeof(float));
     cudaMalloc(&d_C, DSIZE * DSIZE * sizeof(float));
@@ -113,6 +113,7 @@ int main_matrix_mul_float() {
 
     // Copy results back to host
     cudaMemcpy(h_C, d_C, DSIZE * DSIZE * sizeof(float), cudaMemcpyDeviceToHost);
+    cudaCheckErrors("kernel execution failure or cudaMemcpy H2D failure");
 
     // GPU timing
     t2 = clock();
@@ -126,7 +127,6 @@ int main_matrix_mul_float() {
     // *******************************************
 
     // Verify results
-    cudaCheckErrors("kernel execution failure or cudaMemcpy H2D failure");
     int last_b = -1;
     printf("verifying results by block: ");
     for (int i = 0; i < DSIZE * DSIZE; i++)
